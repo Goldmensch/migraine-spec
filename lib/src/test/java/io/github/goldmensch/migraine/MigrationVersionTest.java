@@ -17,7 +17,7 @@ public class MigrationVersionTest {
   void test(boolean higher, boolean lower, boolean equals, TestMigrationVersionImpl... obj) {
     compare(higher, base::higherThan, obj);
     compare(lower, base::lowerThan, obj);
-    compare(equals, base::equals, obj);
+    compare(equals, base::equalTo, obj);
   }
   @Test
   void testHigher() {

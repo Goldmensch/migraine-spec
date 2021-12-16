@@ -1,10 +1,18 @@
 package io.github.goldmensch.migraine.spec;
 
+/**
+ * A simple version according to the scheme of SemVer
+ */
 public interface MigrationVersion {
   int major();
   int minor();
   int patch();
 
+  /**
+   * Checks if this version is higher than {@param version}
+   * @param version The {@link MigrationVersion} that should be compared
+   * @return if this version is higher
+   */
   default boolean higherThan(MigrationVersion version) {
     if(major() > version.major()) {
       return true;
@@ -21,11 +29,21 @@ public interface MigrationVersion {
     return patch() > version.patch();
   }
 
+  /**
+   * Checks if this version is lower than {@param version}
+   * @param version The {@link MigrationVersion} that should be compared
+   * @return if this version is lower
+   */
   default boolean lowerThan(MigrationVersion version) {
-    return !higherThan(version) && !this.equals(version);
+    return !higherThan(version) && !this.equalTo(version);
   }
 
-  default boolean equals(MigrationVersion version) {
+  /**
+   * Checks if this version is equal to {@param version}
+   * @param version The {@link MigrationVersion} that should be compared
+   * @return if this version is equal
+   */
+  default boolean equalTo(MigrationVersion version) {
     return major() == version.major()
         && minor() == version.minor()
         && patch() == version.patch();
