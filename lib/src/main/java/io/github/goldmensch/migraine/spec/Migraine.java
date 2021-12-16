@@ -1,5 +1,7 @@
 package io.github.goldmensch.migraine.spec;
 
+import io.github.goldmensch.migraine.spec.event.Subscribable;
+import io.github.goldmensch.migraine.spec.logging.MigrationLogger;
 import io.github.goldmensch.migraine.spec.unit.MigrationUnit;
 
 /**
@@ -21,6 +23,10 @@ public interface Migraine {
    * @return the {@link MigrationInitializer} that is used for this migration
    */
   MigrationInitializer initializer();
+
+  Subscribable events();
+
+  MigrationLogger logger();
 
   /**
    * Runs the migrations stored in the underlying {@link MigrationRegistry} synchronous
