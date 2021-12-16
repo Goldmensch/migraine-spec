@@ -7,7 +7,7 @@ package io.github.goldmensch.migraine.spec;
 public interface MigrationInitializer {
 
   /**
-   * Setups the database, only executed if {@link this#exists()} returns false
+   * Setups the database, only executed if {@link this#initialized()} returns false
    * otherwise {@link this#update()} is called
    */
   void init();
@@ -16,10 +16,10 @@ public interface MigrationInitializer {
    * Checks if the database is already initialised
    * @return if the database is initialised
    */
-  boolean exists();
+  boolean initialized();
 
   /**
-   * Runs if {@link this#exists()} returns false
+   * Runs if {@link this#initialized()} returns false
    */
   void update();
 }
