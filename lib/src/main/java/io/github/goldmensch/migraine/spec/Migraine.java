@@ -1,6 +1,6 @@
 package io.github.goldmensch.migraine.spec;
 
-import io.github.goldmensch.migraine.spec.event.Subscribable;
+import io.github.goldmensch.migraine.spec.event.EventSubscribable;
 import io.github.goldmensch.migraine.spec.logging.MigrationLogger;
 import io.github.goldmensch.migraine.spec.unit.MigrationUnit;
 
@@ -24,7 +24,7 @@ public interface Migraine {
    */
   MigrationInitializer initializer();
 
-  Subscribable events();
+  EventSubscribable events();
 
   MigrationLogger logger();
 
