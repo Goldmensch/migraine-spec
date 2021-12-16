@@ -1,4 +1,4 @@
-package io.github.goldmensch.migraine.spec.logging;
+package io.github.goldmensch.migraine.spec.unit;
 
 public enum TaskType {
   MIGRATED,
