@@ -1,5 +1,6 @@
 package io.github.goldmensch.migraine.spec;
 
+import io.github.goldmensch.migraine.spec.exceptions.MigrationUnitExists;
 import io.github.goldmensch.migraine.spec.unit.MigrationUnit;
 import java.util.Set;
 
@@ -12,6 +13,7 @@ public interface MigrationRegistry extends Iterable<MigrationUnit>{
    * Registers a {@link MigrationUnit}.
    * If a {@link MigrationUnit} with the same version exists it will throw an error //TODO: insert error
    * @param unit The {@link MigrationUnit} that should be registered
+   * @throws MigrationUnitExists if a unit with the same version already is registered
    */
   void register(MigrationUnit unit);
 
